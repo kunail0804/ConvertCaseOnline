@@ -1,16 +1,32 @@
 window.onload = function() {
+    var nbCar = document.getElementById("nbCar");
+    var nbMots = document.getElementById("nbMots");
+    var nbLigne = document.getElementById("nbLigne");
+    var nbSentence = document.getElementById("nbSentence");
+
+    function copyToClipboard() {
+        var textArea = document.getElementById("textArea");
+        navigator.clipboard.writeText(textArea.value).then(function() {
+            console.log('Copying to clipboard was successful!');
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
+    
     // UpperCase button
     document.getElementById("upperCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
         textArea.value = textArea.value.toUpperCase();
+        copyToClipboard();
     });
-
+    
     // LowerCase button
     document.getElementById("lowerCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
         textArea.value = textArea.value.toLowerCase();
+        copyToClipboard();
     });
-
+    
     // SentenceCase button
     document.getElementById("sentenceCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
@@ -22,8 +38,9 @@ window.onload = function() {
             }
         }
         textArea.value = sentences.join('. ');
+        copyToClipboard();
     });
-
+    
     // TitleCase button
     document.getElementById("titleCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
@@ -35,8 +52,9 @@ window.onload = function() {
             }
         }
         textArea.value = words.join(' ');
+        copyToClipboard();
     });
-
+    
     // InverseCase button
     document.getElementById("inverseCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
@@ -53,8 +71,9 @@ window.onload = function() {
         }
     
         textArea.value = invertedText;
+        copyToClipboard();
     });
-
+    
     // AlternatingCase button
     document.getElementById("alternatingCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
@@ -70,45 +89,21 @@ window.onload = function() {
             }
         }
         textArea.value = words.join(' ');
-    });
-
-    // Download button
-    document.getElementById("download").addEventListener("click", function() {
-        var textArea = document.getElementById("textArea");
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textArea.value));
-        element.setAttribute('download', "CaseConverter.txt");
-
-        element.style.display = 'none';
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
-    });
-
-    // Copy button
-    document.getElementById("copy").addEventListener("click", function() {
-        var textArea = document.getElementById("textArea");
-        navigator.clipboard.writeText(textArea.value).then(function() {
-            console.log('Copying to clipboard was successful!');
-        }, function(err) {
-            console.error('Could not copy text: ', err);
-        });
+        copyToClipboard();
     });
 
     // Clear button
     document.getElementById("clear").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
         textArea.value = '';
+        nbCar.textContent = 0;
+        nbMots.textContent = 0;
+        nbLigne.textContent = 0;
+        nbSentence.textContent = 0;
     });
 
     // ----------------Counters
     var textArea = document.getElementById("textArea");
-    var nbCar = document.getElementById("nbCar");
-    var nbMots = document.getElementById("nbMots");
-    var nbLigne = document.getElementById("nbLigne");
-    var nbSentence = document.getElementById("nbSentence");
 
     // nbCar
     textArea.addEventListener("input", function() {

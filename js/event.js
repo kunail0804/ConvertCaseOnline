@@ -37,17 +37,22 @@ window.onload = function() {
         textArea.value = words.join(' ');
     });
 
-    // InverseCase buttons
+    // InverseCase button
     document.getElementById("inverseCase").addEventListener("click", function() {
         var textArea = document.getElementById("textArea");
-        var words = textArea.value.split(' ');
-        for(var i = 0; i < words.length; i++) {
-            words[i] = words[i].trim();
-            if(words[i]) {
-                words[i] = words[i][0].toLowerCase() + words[i].slice(1).toUpperCase();
+        var text = textArea.value;
+        var invertedText = '';
+    
+        for (var i = 0; i < text.length; i++) {
+            var char = text[i];
+            if (char === char.toUpperCase()) {
+                invertedText += char.toLowerCase();
+            } else {
+                invertedText += char.toUpperCase();
             }
         }
-        textArea.value = words.join(' ');
+    
+        textArea.value = invertedText;
     });
 
     // AlternatingCase button

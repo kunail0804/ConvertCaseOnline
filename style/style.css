@@ -40,8 +40,33 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; // centrer les boutons
+  align-items: center;
   margin: 20px 0;
+}
+
+.special-character-button {
+  background-color: #5c5c5c;
+  border: none;
+  border-radius: 5px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px 10px;
+  transition: background-color 0.3s;
+}
+
+.dropdown {
+  background-color: #5c5c5c;
+  border: none;
+  border-radius: 5px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 30px;
+  margin-left: 10px;
+  padding: 10px 5px;
+  transition: background-color 0.3s;
 }
 
 .button {
@@ -65,7 +90,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px; // créer un espace entre les boutons et les informations
+  margin-top: 20px;
 }
 
 .info-item {
@@ -108,7 +133,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s;
   text-align: center;
-  margin-bottom: 20px; // créer un espace entre le message et les informations
+  margin-bottom: 20px;
 }
 
 .message.show {
@@ -147,7 +172,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center; // centrer les boutons
+    align-items: center;
     margin: 20px 0;
   }
   
@@ -172,7 +197,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px; // créer un espace entre les boutons et les informations
+    margin-top: 20px;
   }
   
   .info-item {
@@ -215,7 +240,7 @@ body {
     opacity: 0;
     transition: opacity 0.3s;
     text-align: center;
-    margin-bottom: 20px; // créer un espace entre le message et les informations
+    margin-bottom: 20px;
   }
   
   .message.show {

@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Convert Case Online</title>
 </head>
 <body>
-    <h1>Convert Case Online</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <label for="textArea">Texte: </label>
-    <textarea id="textArea" rows="10" cols="50"></textarea>
+    <h1 class="title">Convert Case Online</h1>
+    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <label for="textArea" class="label">Texte: </label>
+    <textarea id="textArea" class="textarea" rows="10" cols="50"></textarea>
     <br>
-    <button id="sentenceCase">Phrase</button>
-    <button id="upperCase">Majuscule</button>
-    <button id="lowerCase">Minuscule</button>
-    <button id="titleCase">Titre</button>
-    <button id="inverseCase">Inverse</button>
-    <button id="alternatingCase">Alterné</button>
-    <button id="download">Télécharger</button>
-    <button id="copy">Copié</button>
-    <button id="clear">Clear</button>
+    <div class="button-container"> 
+        <button id="sentenceCase" class="button">Phrase</button>
+        <button id="upperCase" class="button">Majuscule</button>
+        <button id="lowerCase" class="button">Minuscule</button>
+        <button id="titleCase" class="button">Titre</button>
+        <button id="inverseCase" class="button">Inverse</button>
+        <button id="alternatingCase" class="button">Alterné</button>
+        <button id="download" class="button">Télécharger</button>
+        <button id="copy" class="button">Copié</button>
+        <button id="clear" class="button">Supprimé</button>
+    </div>
     <br>
-
-    <p>il y a : <div id="nbCar">0</div>caractère</p>
-    <p>il y a : <div id="nbMots">0</div>mots</p>
-    <p>il y a : <div id="nbLigne">0</div>lignes</p>
-    <p>il y a : <div id="nbSentence">0</div>phrases</p>
-
+<div class="info-container">
+  <div class="info-item">
+    <div class="info-label">il y a :</div>
+    <div id="nbCar" class="count info-value"></div>
+    <div class="info-unit">caractère</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">il y a :</div>
+    <div id="nbMots" class="count info-value"></div>
+    <div class="info-unit">mots</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">il y a :</div>
+    <div id="nbLigne" class="count info-value"></div>
+    <div class="info-unit">lignes</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">il y a :</div>
+    <div id="nbSentence" class="count info-value"></div>
+    <div class="info-unit">phrases</div>
+  </div>
+</div>
     <script src="js/event.js"></script>
 </body>
 </html>

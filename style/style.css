@@ -83,18 +83,20 @@ body {
   font-weight: bold;
 }
 
-.info-value {
-  /* ajoutez ici les styles pour le nombre de caractères, mots, lignes et phrases */
-}
-
-.info-unit {
-  /* ajoutez ici les styles pour les unités (caractère, mots, lignes et phrases) */
-}
-
 .info-item:not(:last-child)::after {
   content: "|";
   margin-left: 5px;
   margin-right: 5px;
 }
 
-
+@media screen and (max-width: 480px) {
+    .info-container {
+      flex-direction: column;
+    }
+    .info-item {
+      margin-bottom: 10px;
+    }
+    .info-item:not(:last-child)::after {
+      content: none;
+    }
+  }

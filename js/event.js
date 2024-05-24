@@ -7,11 +7,22 @@ window.onload = function() {
     function copyToClipboard() {
         var textArea = document.getElementById("textArea");
         navigator.clipboard.writeText(textArea.value).then(function() {
-            console.log('Copying to clipboard was successful!');
+          console.log("Copying to clipboard was successful!");
+          // Mettre à jour le contenu de la div avec le message
+          var messageDiv = document.getElementById("message");
+          messageDiv.textContent = "Le texte a été copié dans le presse-papiers !";
+    
+          // Ajouter une classe pour l'animation (optionnel)
+          messageDiv.classList.add("show");
+    
+          // Supprimer la classe pour l'animation après un certain temps (optionnel)
+          setTimeout(function() {
+            messageDiv.classList.remove("show");
+          }, 3000); // 3 secondes par exemple
         }, function(err) {
-            console.error('Could not copy text: ', err);
+          console.error("Could not copy text: ", err);
         });
-    }
+      }
     
     // UpperCase button
     document.getElementById("upperCase").addEventListener("click", function() {
